@@ -20,5 +20,8 @@ flutter:
   assets:
     - assets/imgs/Girl-Airport-Illustration.jpg
     - assets/imgs/arrow_right_icon.png
+    - assets/imgs/mountain.jpg
+    - assets/imgs/skateboarding.png
+    - assets/imgs/biking.png
 
 

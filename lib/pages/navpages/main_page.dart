@@ -15,6 +15,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
+  List sports = ["Skateboarding", "Biking", "Skateboarding", "Biking"];
+  List sportsImg = [
+    "skateboarding.png",
+    "biking.png",
+    "skateboarding.png",
+    "biking.png"
+  ];
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -52,6 +59,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
           const SizedBox(
             height: 30,
           ),
+
+          // TabBar
           Align(
             alignment: Alignment.centerLeft,
             child: TabBar(
@@ -79,14 +88,82 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                 ]),
           ),
           Container(
+            padding: const EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
-              AppText(text: "Place"),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: const EdgeInsets.only(right: 15, top: 10),
+                    width: 200,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        image: const DecorationImage(
+                            image: AssetImage("assets/imgs/mountain.jpg"),
+                            fit: BoxFit.cover)),
+                  );
+                },
+              ),
               AppText(text: "Inspiration"),
               AppText(text: "Emotions"),
             ]),
-          )
+          ),
+
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(
+                  text: "Explore",
+                  size: 22,
+                ),
+                AppText(
+                  text: "See all",
+                  color: AppColors.mainColor,
+                  size: 20,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Container(
+              height: 120,
+              width: double.maxFinite,
+              margin: const EdgeInsets.only(left: 20),
+              child: ListView.builder(
+                  itemCount: 4,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 15, top: 10),
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white,
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        // ignore: prefer_interpolation_to_compose_strings
+                                        "assets/imgs/" + sportsImg[index]),
+                                    fit: BoxFit.cover)),
+                          ),
+                          Text(sports[index])
+                        ],
+                      ),
+                    );
+                  })),
         ],
       ),
     );
