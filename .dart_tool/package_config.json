@@ -56,6 +56,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "icon_decoration",
+      "rootUri": "file:///C:/Users/Vipul/AppData/Local/Pub/Cache/hosted/pub.dev/icon_decoration-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/Vipul/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.0",
       "packageUri": "lib/",
@@ -164,7 +170,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-02-27T15:46:05.528687Z",
+  "generated": "2024-02-29T14:07:42.709234Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

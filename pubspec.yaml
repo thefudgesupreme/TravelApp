@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  icon_decoration: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -23,5 +24,6 @@ flutter:
     - assets/imgs/mountain.jpg
     - assets/imgs/skateboarding.png
     - assets/imgs/biking.png
+    - assets/imgs/bg.jpg
 
 
