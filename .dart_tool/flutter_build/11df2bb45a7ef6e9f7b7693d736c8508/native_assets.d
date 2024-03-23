@@ -1,0 +1,1 @@
+ D:\\Projects\\Android\\Flutter\\Travelapp\\.dart_tool\\flutter_build\\11df2bb45a7ef6e9f7b7693d736c8508\\native_assets.yaml: 
