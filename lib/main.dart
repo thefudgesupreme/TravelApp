@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/detail_page.dart';
-import 'package:travel_app/pages/home.dart';
-import 'package:travel_app/pages/welcome.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/cubit/app_cubit_logics.dart';
+import 'package:travel_app/cubit/app_cubits.dart';
+import 'package:travel_app/services/data_services.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,10 +13,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: DetailPage(),
+        body: BlocProvider<AppCubits>(
+            create: (context) => AppCubits(
+                  data: DataServices(),
+                ),
+            child: const AppCubitLogics()),
       ),
     );
   }

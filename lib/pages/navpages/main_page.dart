@@ -104,7 +104,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         image: const DecorationImage(
-                            image: AssetImage("assets/imgs/mountain.jpg"),
+                            image: AssetImage("assets/imgs/mountain.jpeg"),
                             fit: BoxFit.cover)),
                   );
                 },

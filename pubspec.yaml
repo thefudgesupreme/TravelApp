@@ -10,6 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   icon_decoration: ^2.0.2
+  bloc:
+  flutter_bloc:
+  equatable:
+  http:
 
 dev_dependencies:
   flutter_test:
@@ -19,9 +23,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/imgs/Girl-Airport-Illustration.jpg
+    - assets/imgs/welcome1.jpeg
+    - assets/imgs/welcome2.jpeg
+    - assets/imgs/welcome3.jpeg
     - assets/imgs/arrow_right_icon.png
-    - assets/imgs/mountain.jpg
+    - assets/imgs/mountain.jpeg
     - assets/imgs/skateboarding.png
     - assets/imgs/biking.png
     - assets/imgs/bg.jpg

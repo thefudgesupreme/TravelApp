@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/cubit/app_cubits.dart';
 import 'package:travel_app/misc/colors.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
@@ -14,17 +17,17 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   List images = [
-    "Girl-Airport-Illustration.jpg",
-    "Girl-Airport-Illustration.jpg",
-    "Girl-Airport-Illustration.jpg"
+    "welcome1.jpeg",
+    "welcome2.jpeg",
+    "welcome3.jpeg",
   ];
 
 //  Use to make heading & text dynamic
-//   List headings = [
-//     "Heading 1",
-//     "Heading 2",
-//     "Heading 3",
-//   ];
+  List headings = [
+    "Beaches",
+    "Deserts",
+    "Mountains",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +40,12 @@ class _WelcomePageState extends State<WelcomePage> {
                 height: double.maxFinite,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        alignment: const Alignment(1.5, 1.0),
+                        // alignment: const Alignment(1.5, 1.0),
                         image: AssetImage(
                           // ignore: prefer_interpolation_to_compose_strings
                           "assets/imgs/" + images[index],
                         ),
-                        fit: BoxFit.contain)),
+                        fit: BoxFit.cover)),
                 child: Container(
                   margin: const EdgeInsets.only(top: 105, left: 20, right: 20),
                   child: Row(
@@ -52,11 +55,11 @@ class _WelcomePageState extends State<WelcomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           AppLargeText(
-                            // text: headings[index], //Dynamic Headings/Texts
                             text: "Trips to",
                           ),
                           AppText(
-                            text: 'Mountains',
+                            text: headings[index], //Dynamic Headings/Texts
+                            // text: 'Mountains',
                             color: Colors.black87,
                           ),
                           const SizedBox(
@@ -65,16 +68,23 @@ class _WelcomePageState extends State<WelcomePage> {
                           SizedBox(
                             width: 250,
                             child: AppText(
-                                text:
-                                    "Mountain hikes give you an incredible sense of freedom alongwith endurance tests..!!",
+                                text: headings[index] +
+                                    " give you an incredible sense of freedom alongwith endurance tests..!!",
                                 color: Colors.black54,
                                 size: 15),
                           ),
                           const SizedBox(
                             height: 40,
                           ),
-                          ResponsiveButton(
-                            width: 150,
+                          GestureDetector(
+                            onTap: () =>
+                                BlocProvider.of<AppCubits>(context).getData(),
+                            child: SizedBox(
+                              width: 200,
+                              child: ResponsiveButton(
+                                width: 150,
+                              ),
+                            ),
                           ),
                         ],
                       ),
